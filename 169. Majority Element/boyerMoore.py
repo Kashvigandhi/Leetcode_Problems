@@ -17,6 +17,6 @@ def majorityElement(nums):
                 else:
                      counter -= 1
         return candidate
-print(majorityElement([3,2,2]))
+print(majorityElement([2,3,2]))
             
                 

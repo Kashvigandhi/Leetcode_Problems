@@ -9,7 +9,7 @@ def twoSum(nums,target):
             if index2+1  < len(nums) and nums[index1] + nums[index2+1] == target:
                 return [index1,index2+1]
 
-print("twoSum:",twoSum([2,7,15,22,1],22))
+print("twoSum:",twoSum([2,7,15,22,1],23))
 
 # using brute force to loop through the array to check the sum of each pair of elements for target
 # time complexity: 

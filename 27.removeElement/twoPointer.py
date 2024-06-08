@@ -9,4 +9,7 @@ def removeElement(nums, val):
             if nums[i] != val:
                 nums[k] = nums[i]
                 k += 1  
+        print(nums)
         return k
+
+print(removeElement([3,2,3,3],3))

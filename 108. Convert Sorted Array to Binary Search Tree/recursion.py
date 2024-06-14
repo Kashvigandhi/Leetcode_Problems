@@ -1,7 +1,7 @@
 # Given an integer array nums where the elements are sorted in ascending order, convert it to a 
 # height-balanced
 #  binary search tree.
-
+# Time & space comp. : O(n)
 class TreeNode(object):
     def __init__(self, val=0, left=None, right=None):
         self.val = val

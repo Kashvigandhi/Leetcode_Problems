@@ -16,10 +16,11 @@ def sortedArrayToBST(nums):
         def helper(l, r):
              if l > r:
                   return None
-             root = TreeNode(nums[(l + r) // 2])
-             root.left = helper(l,((l + r) // 2) - 1 )
-             root.right = helper(l + 1,r)
-             return root
+             m = (l + r) // 2
+             root = nums[m]
+             left = helper(l,m - 1 )
+             right = helper(m + 1,r)
+             return TreeNode(root,left,right)
         helper(0,len(nums) - 1)
         
 

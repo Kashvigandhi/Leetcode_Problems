@@ -9,33 +9,37 @@ def getIntersectionNode(headA, headB):
     :type head1, head1: ListNode
     :rtype: ListNode
     """
-    visitedNodes = []
+    countA = 0
+    countB = 0
     tempA = headA
     tempB = headB
-    while(tempA != None or tempB != None):
-        if((tempA == tempB)  or (tempA in visitedNodes)):
-            return tempA
-        if ((tempB in visitedNodes)):
-            return tempB
-        visitedNodes.append(tempA)
-        visitedNodes.append(tempB)
+    while tempA or tempB:
+        if tempA:
+            countA += 1
+            tempA = tempA.next
+        if tempB:
+            countB += 1
+            tempB = tempB.next
+    tempA = headA
+    tempB = headB
+    if countA > countB:
+        for i in range(countA - countB):
+            tempA = tempA.next
+    if countB > countA:
+        for i in range(countB - countA):
+            tempB = tempB.next
+    while tempA:
+        if tempA == tempB : return True
         tempA = tempA.next
         tempB = tempB.next
-    if (tempA):
-        while(tempA):
-            if tempA in visitedNodes : return tempA
-            tempA = tempA.next
-    if (tempB):
-        while(tempB):
-            if tempB in visitedNodes : return tempB
-            tempB = tempB.next
-    return None
+    return False
+
+ 
 root1 = ListNode("a1")
 root2 = ListNode("b1")
 root1.next = ListNode("a2")
 root2.next = ListNode("b2")
 root1.next.next = ListNode("c1")
-print(root1.next.next)
 root2.next.next = ListNode("b3")
 root2.next.next.next = root1.next.next
 root1.next.next.next = ListNode("c2") 
